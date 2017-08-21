@@ -1,16 +1,17 @@
+//import Angular build-modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
+//import custom modules
 import { AppComponent } from './app.component';
 import { DailyTasksComponent } from './daily-tasks.component';
 import { TaskComponent } from './task.component';
 import { TaskForm } from './task-form.component';
-import { TaskIdDirective } from './taskid.directive';
 
+//setup routing
 const appRoutes: Routes = [
   { path: 'daily-tasks', component: DailyTasksComponent },
   { path: 'task', component: TaskComponent },
@@ -27,8 +28,7 @@ const appRoutes: Routes = [
     AppComponent,
     DailyTasksComponent,
     TaskComponent,
-    TaskForm,
-    TaskIdDirective
+    TaskForm
   ],
   imports: [
     BrowserModule,
