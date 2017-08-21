@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>Update</h1>
+    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+        <div class="form-group">
+            <label for="name">Task</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" class="form-control" id="date" required [(ngModel)]="model.date" name="date">
+        </div>
+
+        <div class="form-group">
+            <label for="goal">Goal</label>
+            <input type="text" class="form-control" id="goal" required [(ngModel)]="model.goal" name="goal">
+        </div>
+
+        <div class="form-group">
+            <label for="deliverable">Deliverable</label>
+            <input type="text" class="form-control" id="deliverable" required [(ngModel)]="model.deliverable" name="deliverable">
+        </div>
+        
+        <div class="form-group">
+            <label for="priority">Priority</label>
+            <input type="text" class="form-control" id="priority" required [(ngModel)]="model.priority" name="priority">
+        </div>
+
+        <div class="form-group">
+            <label for="starttime">Start time</label>
+            <input type="text" class="form-control" id="starttime" required [(ngModel)]="model.starttime" name="starttime">
+        </div>
+
+        <div class="form-group">
+            <label for="endtime">End time</label>
+            <input type="text" class="form-control" id="endtime" required [(ngModel)]="model.endtime" name="endtime">
+        </div>
+
+        <div class="form-group">
+            <label for="reminder">Reminder</label>
+            <input type="text" class="form-control" id="reminder" required [(ngModel)]="model.reminder" name="reminder">
+        </div>
+
+        <div class="form-group">
+            <label for="process">Process</label>
+            <input type="text" class="form-control" id="process" required [(ngModel)]="model.process" name="process">
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!taskForm.form.valid">Save</button>
+    </form>
+</div>
+
+<!-- <p taskid>Highlight me!</p> -->

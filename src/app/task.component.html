@@ -1,0 +1,32 @@
+<a routerLink="/task-form" routerLinkActive="active" class="nav-link">Add new</a>
+{{numTasks}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Goal</th>
+            <th>Deliverable</th>
+            <th>Priority</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th>Reminder</th>
+            <th>Process</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of taskList">
+            <td>{{task.name}}</td>
+            <td>{{task.date}}</td>
+            <td>{{task.goal}}</td>
+            <td>{{task.deliverable}}</td>
+            <td>{{task.priority}}</td>
+            <td>{{task.starttime}}</td>
+            <td>{{task.endtime}}</td>
+            <td>{{task.reminder}}</td>
+            <td>{{task.process}}</td>
+            <td><a routerLink="/task-form/{{task.id}}">Edit</a></td>
+            <td><a routerLink="delete/{{task.id}}" (click)="deleteTask(task)" id="{{task.id}}">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

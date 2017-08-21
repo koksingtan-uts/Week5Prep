@@ -6,6 +6,6 @@ import { OnInit } from '@angular/core';
     selector: 'daily-tasks',
     templateUrl: 'daily-tasks.component.html'
 })
-export class DailyTasks {
+export class DailyTasksComponent {
     
 }
