@@ -9,6 +9,7 @@ Coding Standard
 - Opening parenthesis must be placed in the same line as the preceding token.
 - 'Magic number' and 'magic string' are strictly prohibited.
 - Single quotes are preferred to double quotes. Exceptionally, double quotes might be used if single quotes would require escaping.
+- Comments must be added for each block of code, explaining what is being done
 
 Spaces
 Before parenthesis
@@ -26,7 +27,7 @@ function foo() {
   - while
   - switch
   - catch
-  - in function expression
+  - inner function expression
  
 if (i > 10) {
   for (var j = 0; j < 10; j++) {
@@ -58,7 +59,7 @@ var a = 0,
     e = a + d;
 
 - Do not add around:
-  - unary operators (!, -, +, ++, --_
+  - unary operators (!, -, +, ++, --)
 
 j++;
 bar = !foo;
@@ -90,6 +91,8 @@ In ternary operators
   - before ':'
   - after ':'
 
+
+
 Other
 - Add
   - after comma
@@ -97,4 +100,4 @@ Other
 - Do not add
   - before comma
   - before semicolon
-  - before property name-value separator (:0
+  - before property name-value separator (:)
