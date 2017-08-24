@@ -66,4 +66,35 @@ bar = !foo;
 Before left brace
 - Add before:
   - function
-  - 
+  - if
+  - else
+  - for
+  - while
+  - do
+  - switch
+  - try
+  - catch
+  - finally
+
+Before keywords
+- Add before:
+  - else
+  - while
+  - catch
+  - fanally
+
+In ternary operators
+- Add:
+  - before '?'
+  - after '?'
+  - before ':'
+  - after ':'
+
+Other
+- Add
+  - after comma
+  - after property name-value separator (:)
+- Do not add
+  - before comma
+  - before semicolon
+  - before property name-value separator (:0
