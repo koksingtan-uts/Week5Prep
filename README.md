@@ -9,7 +9,14 @@ Coding Standard
 - Opening parenthesis must be placed in the same line as the preceding token.
 - 'Magic number' and 'magic string' are strictly prohibited.
 - Single quotes are preferred to double quotes. Exceptionally, double quotes might be used if single quotes would require escaping.
-- Comments must be added for each block of code, explaining what is being done
+- Comments must be added for each block of code, explaining what is being done.
+- Variable names must be in camel case.
+- Variable names must clearly identify what it is used for.
+- Constant variable names must be in camel case.
+- Class names must be in Pascal case.
+- Unused variables must be removed.
+- The maximum number of characters on a line is 100. If the number of characters exceeds 100 characters, create a new line with
+an indent.
 
 Spaces
 Before parenthesis
@@ -90,8 +97,6 @@ In ternary operators
   - after '?'
   - before ':'
   - after ':'
-
-
 
 Other
 - Add
