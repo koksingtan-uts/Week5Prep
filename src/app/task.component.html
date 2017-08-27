@@ -20,12 +20,12 @@
             <td>{{task.goal}}</td>
             <td>{{task.deliverable}}</td>
             <td>{{task.priority}}</td>
-            <td>{{task.starttime}}</td>
-            <td>{{task.endtime}}</td>
+            <td>{{task.startTime}}</td>
+            <td>{{task.endTime}}</td>
             <td>{{task.reminder}}</td>
             <td>{{task.process}}</td>
-            <td><a routerLink="/task-form/{{task.id}}">Edit</a></td>
-            <td><a routerLink="delete/{{task.id}}" (click)="deleteTask(task)" id="{{task.id}}">Delete</a></td>
+            <td><a routerLink="/task-form/{{task.taskId}}">Edit</a></td>
+            <td><a routerLink="delete/{{task.taskId}}" (click)="deleteTask(task)" id="{{task.taskId}}">Delete</a></td>
         </tr>
     </tbody>
 </table>

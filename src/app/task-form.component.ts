@@ -20,26 +20,28 @@ export class TaskForm implements OnInit {
         private http: HttpClient,
         private location: Location
     ) {
-        this.model = new Task(4, "", "", "", "", "", "", "", "", "");
+        this.model = new Task(-1, "", "", "", "", "", "", "", "", "");
     }
 
     //Makes get request to the server and populate tasks
     ngOnInit(): void {
         let id = this.route.snapshot.paramMap.get('id');
 
-        this.http.get('http://localhost:3000/api/task/edit/' + id).subscribe(data => {
-            this.model = new Task(data['taskId'],
-                data['name'],
-                data['date'],
-                data['goal'],
-                data['deliverable'],
-                data['priority'],
-                data['startTime'],
-                data['endTime'],
-                data['reminder'],
-                data['process']
-            )
-        });
+        if (id){
+            this.http.get('http://localhost:3000/api/task/edit/' + id).subscribe(data => {
+                this.model = new Task(data[0]['taskId'],
+                    data[0]['name'],
+                    data[0]['date'],
+                    data[0]['goal'],
+                    data[0]['deliverable'],
+                    data[0]['priority'],
+                    data[0]['startTime'],
+                    data[0]['endTime'],
+                    data[0]['reminder'],
+                    data[0]['process']
+                )
+            });
+        }
     }
 
     submitted = false;
@@ -59,6 +61,5 @@ export class TaskForm implements OnInit {
             "reminder": this.model.reminder,
             "process": this.model.process
         }).subscribe(data => { });
-        this.location.back();
     }
 }
