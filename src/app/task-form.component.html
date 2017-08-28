@@ -29,12 +29,12 @@
 
         <div class="form-group">
             <label for="starttime">Start time</label>
-            <input type="text" class="form-control" id="starttime" required [(ngModel)]="model.startTime" name="starttime">
+            <input type="text" class="form-control" id="startTime" required [(ngModel)]="model.startTime" name="starttTime">
         </div>
 
         <div class="form-group">
             <label for="endtime">End time</label>
-            <input type="text" class="form-control" id="endtime" required [(ngModel)]="model.endTime" name="endtime">
+            <input type="text" class="form-control" id="endTime" required [(ngModel)]="model.endTime" name="endTime">
         </div>
 
         <div class="form-group">
@@ -50,5 +50,3 @@
         <button type="submit" class="btn btn-success" [disabled]="!taskForm.form.valid">Save</button>
     </form>
 </div>
-
-<!-- <p taskid>Highlight me!</p> -->

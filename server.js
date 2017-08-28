@@ -1,4 +1,4 @@
-//Initialize server components
+// Initialize server components
 var express = require('express');
 var app = express();
 var router = express.Router();
@@ -9,15 +9,15 @@ var taskinitializer = require('./task-initializer');
 var axios = require('axios');
 var mongoose = require('mongoose');
 
-//Initialize server for processing json and cors 
+// Initialize server for processing json and cors 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-//Initialize dummy task values
+// Initialize dummy task values
 var tasks = taskinitializer.initializeTasks();
 
-//Set up mongodb connection and data schema
+// Set up mongodb connection and data schema
 mongoose.connect('mongodb://localhost:27017/')
 var Schema = mongoose.Schema;
 
@@ -45,13 +45,13 @@ var Task = mongoose.model('Task', taskSchema);
 // });    
 
 
-//Set up router to provide message on each processing
+// Set up router to provide message on each processing
 router.use(function (req, res, next) {
     console.log("Something is happening.");;
     next();
 });
 
-//Routing for task module that returns all task data
+// Routing for task module that returns all task data
 router.get('/tasks', function (req, res) {
     Task.find({}, function (err, tasks) {
         if (err)
@@ -60,14 +60,14 @@ router.get('/tasks', function (req, res) {
     });
 });
 
-//Routing for task edit with id parameter
+// Routing for task edit with id parameter
 router.get('/task/edit/:id', function (req, res) {
     Task.find({ taskId: req.params.id }, function (err, task) {
         res.json(task);
     });
 });
 
-//Routing for task edit post request.
+// Routing for task edit post request.
 router.post('/task/edit/:id', function (req, res) {
     if (req.params.id != -1) {
         Task.find({ taskId: req.params.id }, function (err, task) {
@@ -105,10 +105,10 @@ router.post('/task/edit/:id', function (req, res) {
     }
 });
 
-//setup router root folder
+// Setup router root folder
 app.use('/api', router);
 
-//listens to port 3000
+// Listens to port 3000
 app.listen(3000, function () {
     console.log('Server is running');
 });
